@@ -2,7 +2,7 @@ import './SignUp.css';
 import { FcGoogle } from "react-icons/fc";
 import {FaApple} from "react-icons/fa";
 import{FaTwitter} from "react-icons/fa";
-
+import { Link } from 'react-router-dom';
 
 export default function SignUp (){
     return(
@@ -30,7 +30,7 @@ export default function SignUp (){
 
             <p>By signing up, you agree to the <a style={{color:'skyblue'}}>Terms of Service</a> and <a style={{color:'skyblue'}}>Privacy Policy,</a>
             including <a style={{color:'skyblue'}}>Cookie Use.</a></p>
-            <p className="last-line">Have an account already? <a style={{color:'skyblue'}}>Log in</a></p>
+            <p className="last-line">Have an account already? <Link to='/login' style={{color:'skyblue'}}>Log in</Link></p>
         </div>
         </>
     

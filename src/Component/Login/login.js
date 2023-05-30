@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import {FaApple} from "react-icons/fa";
 import{FaTwitter} from "react-icons/fa";
  import { GrClose } from "react-icons/gr";
+ import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
@@ -38,7 +39,7 @@ export default function Login() {
        
 
         <p className={styles.last_line}>
-          Have an account already? <a style={{ color: "skyblue" }}>Sign Up</a>
+          Don't Have an account ? <Link to='/signup' style={{ color: "skyblue" }}>Sign Up</Link>
         </p>
       </div>
     </>
