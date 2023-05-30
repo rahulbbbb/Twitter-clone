@@ -1,4 +1,4 @@
-import styles from './Login/login.module.css';
+import styles from './login.module.css';
 import TextField from '@mui/material/TextField';
 import { FcGoogle } from "@react-icons/all-files/fc/FcGoogle";
 import {FaApple} from "@react-icons/all-files/fa/FaApple";
