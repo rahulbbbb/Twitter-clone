@@ -1,4 +1,4 @@
-import './SignUp.css';
+import styles from './SignUp.module.css';
 import { FcGoogle } from "react-icons/fc";
 import {FaApple} from "react-icons/fa";
 import{FaTwitter} from "react-icons/fa";
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export default function SignUp (){
     return(
         <>
-        <div className="logo-box">
+        <div className={styles.logoBox}>
         <FaTwitter color="Royalblue" size={35}/>
             <h2>Join Twitter today</h2>
 
@@ -30,7 +30,7 @@ export default function SignUp (){
 
             <p>By signing up, you agree to the <a style={{color:'skyblue'}}>Terms of Service</a> and <a style={{color:'skyblue'}}>Privacy Policy,</a>
             including <a style={{color:'skyblue'}}>Cookie Use.</a></p>
-            <p className="last-line">Have an account already? <Link to='/login' style={{color:'skyblue'}}>Log in</Link></p>
+            <p className={styles.lastLine}>Have an account already? <Link to='/login' style={{color:'skyblue'}}>Log in</Link></p>
         </div>
         </>
     
