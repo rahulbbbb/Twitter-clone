@@ -6,17 +6,12 @@
 
 body {
     background-color: lightgray;
-    display:flex;
-    margin-top:100px;
-    justify-content: center;
-    align-items: center; 
 }
 
 .logo-box {
     background: white;
     padding: 30px 120px;
     width: 550px;
-    height: 600px;
     position: absolute;
     top:50%;
     left:50%;
@@ -73,3 +68,12 @@ body {
     margin-top: 25px;
     
 }
+
+@media (max-width: 768px) {
+    .logo-box {
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 50px;
+    }
+  }

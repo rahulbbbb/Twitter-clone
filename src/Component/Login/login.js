@@ -9,9 +9,7 @@ export default function Login() {
   return (
     <>
       <div className={styles.logo_box}>
-          <div className={styles.header}>
-          <GrClose/>
-          </div>
+          
           <FaTwitter color="Royalblue" size={35}/>
 
         <h1>Sign in to Twitter</h1>

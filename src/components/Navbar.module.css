@@ -25,7 +25,7 @@
 }
 .text2{
     margin-top: -2px;
-    margin-right: -20px;
+    margin-left: 85px;
     color:#fff;
 }
 
@@ -81,6 +81,10 @@ button:hover{
     .text1 {
       margin-left: 0;
       text-align: center;
+    }
+
+    .text2{
+        margin-left:0px;
     }
   
     .btn1 {
