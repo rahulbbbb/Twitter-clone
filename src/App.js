@@ -1,10 +1,10 @@
-import React  from 'react';
+import Login from "./Component/Login/login";import React  from 'react';
 
 function App() {
   return (
     <div>
-      <h1>Hello world!</h1>
-      
+         <h1>Hello world!</h1>
+      <Login/>
     </div>
   );
 }
