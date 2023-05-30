@@ -1,17 +1,15 @@
 import styles from './login.module.css';
 import TextField from '@mui/material/TextField';
-import { FcGoogle } from "@react-icons/all-files/fc/FcGoogle";
-import {FaApple} from "@react-icons/all-files/fa/FaApple";
-import{FaTwitter} from "@react-icons/all-files/fa/FaTwitter";
+import { FcGoogle } from "react-icons/fc";
+import {FaApple} from "react-icons/fa";
+import{FaTwitter} from "react-icons/fa";
  import { GrClose } from "react-icons/gr";
 
 export default function Login() {
   return (
     <>
       <div className={styles.logo_box}>
-          <div className={styles.header}>
-          <GrClose/>
-          </div>
+          
           <FaTwitter color="Royalblue" size={35}/>
 
         <h1>Sign in to Twitter</h1>

@@ -1,101 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-
-body{
-    display:flex;
-    margin-top:100px;
+body {
+    display: flex;
+    margin-top: 100px;
     justify-content: center;
-    align-items: center; 
- }
- .logo_box{
-     width:500px;
-     display: flex;
-     padding:40px,10px,40px,10px;
-     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     padding:20px 5px 35px 5px;
-     border-radius: 20px;
- }
- .header{
-     width:100%; 
-     cursor: pointer;
-     display: flex;
-     margin-left: 25px;
-     justify-content:flex-start;
-     margin-bottom: -25px;
- }
- .logo-box h2 {
-     margin-bottom: 20px;
- 
- }
- .Mylogo {
-     width: 30px;
-     margin-bottom: 20px;
- }
- 
- .googlelogo{
-     padding:5px;
- }
- .btn{
-    padding:8px;
-    width:63%;
+    align-items: center;
+}
+
+.logo_box {
+    background: white;
+    padding: 30px 120px;
+    width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo_box h2 {
+    margin-bottom: 50px;
+}
+
+.Mylogo {
+    width: 30px;
+    margin-bottom: 20px;
+}
+
+.googlelogo {
+    padding: 5px;
+}
+
+.btn {
+    padding: 8px;
+    width: 63%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px;
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-bottom: 10px;
     border-radius: 30px;
     background: transparent;
- cursor: pointer;
+    cursor: pointer;
     font-weight: bold;
     font-size: 15px;
-    margin-top:0px;
+    margin-top: 0px;
     /* color: grey; */
     cursor: pointer;
- }
- .next_btn{
-     width:63%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding:9px;
-    margin-top:20px;
-     border-radius: 30px;  
-     font-size: 15px;
-     cursor: pointer;
- }
- 
-  span {
-     display: block;
-     width: 40px;
-     margin-top:-20px;
-     background-color: white;
-     text-align: center;
-     font-size: 17px;
-     color:rgb(75, 73, 73);
-     margin-bottom: 15px;
- }
- .TextField{
-     width:60%;
-     
- }
- /* .icon{
-     width:25px;
- } */
- .fa_Apple{
-     width:30px;
- }
- 
- .last_line{
-     margin-top: 45px;
- }
- hr {
-     width: 65%;
-     margin-left: auto;
-     margin-right: auto;
-   }
+}
+
+.next_btn {
+    width: 63%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    margin-top: 20px;
+    margin-left: 50px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    width: 40px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    color: rgb(75, 73, 73);
+    margin-bottom: 15px;
+}
+
+.TextField {
+    width: 60%;
+}
+
+hr {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .logo_box {
+        width: 90%;
+        padding: 20px;
+        margin-bottom: 50px;
+
+    }
   
- 
-   a:hover{
-     text-decoration: underline;
-   }
+    .btn, .next_btn {
+        width: 100%;
+        margin-left: 0;
+    }
+  
+    .TextField {
+        width: 80%;
+    }
+}
