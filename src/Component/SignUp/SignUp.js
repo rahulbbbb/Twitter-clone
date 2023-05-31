@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FaApple } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
-import SignUpForm from '../SignUpForm/SignUpForm';
 import { Link } from 'react-router-dom';
+import SignUpForm from '../SignUpForm/SignUpForm';
 
 
 export default function SignUp() {
@@ -39,9 +39,7 @@ export default function SignUp() {
             style={{ background: 'black', color: 'white' }}
             onClick={handleCreateAccount}
           >
-           <Link style={{ textDecoration: 'none', color:"white" }} to="/signupform">
             Create account
-            </Link>
           </button>
         ) : (
           <SignUpForm />
