@@ -1,13 +1,14 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ProtectedRoutes({ Home }) {
-  const isLogin = false;
+  const isLogin = true;
+  const Navigate = useNavigate();
 
   if(!isLogin){
-    return <Navigate to='/login'/>
+    return Navigate('/login');
   }
-  else return Home;
+  return Home;
 }
 
 export default ProtectedRoutes;

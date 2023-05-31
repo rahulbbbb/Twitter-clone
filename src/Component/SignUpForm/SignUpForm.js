@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styles from './SignUpForm.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = () => {
+
+  const Navigate = useNavigate();
+
   const [user, setUser] = useState({
     isLoggedIn: false,
     name: '',
@@ -49,6 +53,7 @@ const SignUpForm = () => {
       setErrmsg({...errmsg, dob: "Enter valid date of birth"});
     }
     else if (nameRegex.test(user.name) && emailRegex.test(user.email) && phoneRegex.test(user.phone) && passwordRegex.test(user.password) ){
+
       storedUsers.push(user);
     
       localStorage.setItem('users', JSON.stringify(storedUsers));
@@ -67,6 +72,7 @@ const SignUpForm = () => {
         dob: '',
         password: '',
       });
+      Navigate ('/login');
     }
   };
 
