@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import SignUp from "./Component/SignUp/SignUp";
 import Home from "./Component/HomePage/Home";
 import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
+import RightsideSection from "./Component/RightsideSection/RightSection";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           element={
             <ProtectedRoutes>
               <Home />
+              <RightsideSection/>
             </ProtectedRoutes>
           }
         />
