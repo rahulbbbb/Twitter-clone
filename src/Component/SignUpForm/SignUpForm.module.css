@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-color: lightgray;
-}
+} */
 
 h1{
   margin-bottom: 20px;
@@ -18,7 +18,8 @@ h1{
   height: 78vh;
   width: 550px;
   position: absolute;
-  top: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;

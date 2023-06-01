@@ -20,10 +20,10 @@ export default function Login() {
       let userEmail = document.getElementById("email").value;
       let userPass = document.getElementById("pass").value;
 
-      if (elem.email == userEmail && elem.password == userPass) {
+      if (elem.email === userEmail && elem.password === userPass) {
         alert("Login Successfull");
         Dispatch(userLogin(true));
-        navigate("/");
+        navigate("/home");
       } else if (elem.pass !== userPass || elem.email !== userEmail) {
         alert("Invalid Email OR Passward");
       }
