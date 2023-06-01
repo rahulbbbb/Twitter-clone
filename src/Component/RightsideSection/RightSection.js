@@ -3,7 +3,6 @@ import style from "./RightSection.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import MoreHorizSharpIcon from "@mui/icons-material/MoreHorizSharp";
 import Tooltip from "@mui/material/Tooltip";
-import { Button } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
@@ -82,7 +81,7 @@ export default function RightsideSection () {
       
         <div className={style.happen}>
           <div className={style.head}>
-            <span>what's happening</span>
+            <p>what's happening</p>
           </div>
 
           <div className={style.box}>
@@ -94,7 +93,7 @@ export default function RightsideSection () {
                       <p>{user.title}</p>
                     </div>
                     <div className={style.name}>
-                      <span>{user.name}</span>
+                      <p>{user.name}</p>
                     </div>
                     <div className={style.tweets}>
                       <p>{user.tweets} </p>
@@ -105,8 +104,7 @@ export default function RightsideSection () {
                     <PopupState variant="popover" popupId="demo-popup-popover">
                       {(popupState) => (
                         <div>
-                          <div
-                            className={style.userData}
+                          <div className={style.userData}
                             {...bindTrigger(popupState)}>
                             <Tooltip title="More">
                               <MoreHorizSharpIcon sx={{ fontSize: "15px" }} />
@@ -129,13 +127,13 @@ export default function RightsideSection () {
                                 cursor: "pointer",
                                 ":hover": { background: "#f5f4f2" },
                               }}>
-                              <span className={style.popoverName} onClick={()=>handleNotInterested(user)}>
+                              <div className={style.popoverName} onClick={()=>handleNotInterested(user)}>
                                 {" "}
                                 <SentimentVeryDissatisfiedIcon
                                   sx={{ fontSize: "17px" }}
                                 />{" "}
                                 Not interested in this
-                              </span>
+                              </div>
                             </Typography>
                             <Typography
                               sx={{
@@ -143,13 +141,13 @@ export default function RightsideSection () {
                                 cursor: "pointer",
                                 ":hover": { background: "#f5f4f2" },
                               }}>
-                              <span className={style.popoverName}>
+                              <div className={style.popoverName}>
                                 {" "}
                                 <SentimentVeryDissatisfiedIcon
                                   sx={{ fontSize: "17px" }}
                                 />{" "}
                                 This trend is harmful or spammy
-                              </span>
+                              </div>
                             </Typography>
                           </Popover>
                         </div>
@@ -167,7 +165,7 @@ export default function RightsideSection () {
 
         <div className={style.follow}>
           <div className={style.toFollow}>
-            <span>Who to follow </span>
+            <p>Who to follow </p>
           </div>
           <div className={style.Data}>
             <Data
@@ -209,13 +207,10 @@ function Data({ src, name, email, onClick, follow }) {
       </div>
       <div className={style.followName}>
         <h4>{name}</h4>
-        <span>{email}</span>
+        <p>{email}</p>
       </div>
       <div className={style.followBtn}>
-        <Button sx={{ backgroundColor: "black", borderRadius: "20px" }}
-          variant="contained" onClick={onClick}>
-          {follow}
-        </Button>
+        <button className={style.design} onClick={onClick}> {follow} </button>
       </div>
     </div>
   );
