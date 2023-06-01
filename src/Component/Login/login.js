@@ -6,41 +6,29 @@ import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { getUsers } from "./localStorage";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import { IconButton } from '@mui/material';
 import { useDispatch } from "react-redux";
 import { userLogin } from "../Redux/LoginSlice";
-
 
 export default function Login() {
   let userArr = JSON.parse(localStorage.getItem("users"));
 
   const Dispatch = useDispatch();
+  const navigate = useNavigate();
+  function handleSubmit(event) {
+    event.preventDefault();
+    userArr.map(function (elem) {
+      let userEmail = document.getElementById("email").value;
+      let userPass = document.getElementById("pass").value;
 
-  let userArr=JSON.parse(localStorage.getItem("users"));
-  
- const navigate =  useNavigate();
-function handleSubmit(event){
-      event.preventDefault();
-     userArr.map(function(elem){
-
-        let userEmail = document.getElementById("email").value;
-        let userPass = document.getElementById("pass").value;
-
-        console.log(userEmail, userPass, elem.email , elem.password );
-        
-
-        if( elem.email == userEmail && elem.password == userPass)
-         {
-                alert("Login Successfull");                
-                Dispatch(userLogin(true));
-                navigate('/');
-               
-         }
-            else if(elem.pass !== userPass || elem.email !== userEmail )
-            {
-                alert("Invalid Email OR Passward");
-            }
+      if (elem.email == userEmail && elem.password == userPass) {
+        alert("Login Successfull");
+        Dispatch(userLogin(true));
+        navigate("/");
+      } else if (elem.pass !== userPass || elem.email !== userEmail) {
+        alert("Invalid Email OR Passward");
+      }
+    });
+  }
 
   function handleForgotPassward() {
     navigate("/forgotPass");
