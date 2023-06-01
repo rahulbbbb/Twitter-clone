@@ -7,13 +7,11 @@ const SignUpForm = () => {
   const Navigate = useNavigate();
 
   const [user, setUser] = useState({
-    isLoggedIn: false,
     name: '',
     email: '',
     phone: '',
     dob: '',
     password: '',
-    feed: [],
   });
   const [errmsg, setErrmsg] = useState({
     name: '',
@@ -33,7 +31,7 @@ const SignUpForm = () => {
 
     const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ ;    
     const passwordRegex = /^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$/ ;
-    const nameRegex = /^[a-zA-Z]+$/ ;
+    const nameRegex = /^[a-zA-z]+([\s][a-zA-Z]+)*$/ ;
     const phoneRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[6789]\d{9}$/;
     const date = Date.now();
 

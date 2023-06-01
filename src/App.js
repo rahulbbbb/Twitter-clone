@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import HomeP from "./Pages/HomeP";
 import LoginP from "./Pages/LoginP";
 import SignUpP from "./Pages/SignUpP";
-//import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
+import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
         <Route index
           path="/"
           element={
-            //<ProtectedRoutes>
+            <ProtectedRoutes>
               <HomeP />
-            //</ProtectedRoutes>
+            </ProtectedRoutes>
           }
         />
         <Route path="/signup" element={<SignUpP/>} />

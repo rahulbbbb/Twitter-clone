@@ -10,13 +10,16 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { IconButton } from '@mui/material';
+import { useDispatch } from "react-redux";
+import { userLogin } from "../Redux/LoginSlice";
 
 
 export default function Login() {
 
+  const Dispatch = useDispatch();
 
   let userArr=JSON.parse(localStorage.getItem("users"));
-  // console.log(userArr)
+  
  const navigate =  useNavigate();
 function handleSubmit(event){
       event.preventDefault();
@@ -30,8 +33,9 @@ function handleSubmit(event){
 
         if( elem.email == userEmail && elem.password == userPass)
          {
-                alert("Login Successfull");
-                navigate('/')
+                alert("Login Successfull");                
+                Dispatch(userLogin(true));
+                navigate('/');
                
          }
             else if(elem.pass !== userPass || elem.email !== userEmail )
