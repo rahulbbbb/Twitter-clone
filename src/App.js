@@ -1,27 +1,29 @@
-import Login from "./Component/Login/login";
+
 import React from "react";
-import Navbar from "./Component/Navbar/Navbar";
+
 import { Routes, Route } from "react-router-dom";
-import SignUp from "./Component/SignUp/SignUp";
-import Home from "./Component/HomePage/Home";
-import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
+import HomeP from "./Pages/HomeP";
+import LoginP from "./Pages/LoginP";
+import SignUpP from "./Pages/SignUpP";
+//import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   return (
     <div>
-      <Navbar />
+      
       <Routes>
         <Route index
           path="/"
           element={
-            <ProtectedRoutes>
-              <Home />
-            </ProtectedRoutes>
+            //<ProtectedRoutes>
+              <HomeP />
+            //</ProtectedRoutes>
           }
         />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpP/>} />
+        <Route path="/login" element={<LoginP />} />
       </Routes>
+      
     </div>
   );
 }
