@@ -1,14 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function ProtectedRoutes({ Home }) {
-  const isLogin = true;
+
+  const { isLoggedIn } = useSelector((state)=>state.login);
+
   const Navigate = useNavigate();
 
-  if(!isLogin){
-    return Navigate('/login');
+  if(isLoggedIn){
+    return Home;    
   }
-  return Home;
+  return Navigate('/login');
+  
 }
 
 export default ProtectedRoutes;
