@@ -5,13 +5,9 @@ import { FaApple } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
  import { Link } from 'react-router-dom';
-import { getUsers } from "./localStorage";
-import Button from "@mui/material/Button";
-import { isUserSignedInAtom } from "./recoil";
-import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import { IconButton } from '@mui/material';
+
+
 
 
 export default function Login() {
@@ -27,7 +23,7 @@ function handleSubmit(event){
         let userEmail = document.getElementById("email").value;
         let userPass = document.getElementById("pass").value;
 
-        console.log(userEmail, userPass, elem.email , elem.password );
+        //console.log(userEmail, userPass, elem.email , elem.password );
         
 
         if( elem.email == userEmail && elem.password == userPass)
@@ -42,7 +38,12 @@ function handleSubmit(event){
             }
 
     })
+    
 
+}
+
+function handleForgotPassward(){
+   navigate('/forgotPass')
 }
 
   return (
@@ -85,18 +86,12 @@ function handleSubmit(event){
             required
           />
           <br />
-          {/* <Button
-            className={styles.login_btn}
-            variant="contained"
-            type="submit"
-            sx={{ borderRadius: 10, backgroundColor: "black", color: "White" }}
-          >
-            Login
-          </Button> */}
+       
           <input  className={styles.input_submit} type="submit" id="login"/>
         </form>
 
         <button
+        onClick={handleForgotPassward}
           className={styles.next_btn}
           style={{ background: "white", color: "black" }}
         >
