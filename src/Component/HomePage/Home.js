@@ -1,10 +1,12 @@
 import React from 'react'
+import CenterHeader from '../../Center-Header'
 
 function Home() {
   return (
-    <div>
-        <h2>This is Home Page</h2>
-    </div>
+    <>
+       
+        <CenterHeader/>
+    </>
   )
 }
 
