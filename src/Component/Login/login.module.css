@@ -12,7 +12,7 @@ body{
  }
 
  .logo_box{
-     width:500px;
+     width:550px;
      display: flex;
      position: absolute;
      top: 50%;
@@ -106,7 +106,7 @@ body{
  }
  
  .last_line{
-     margin-top: 45px;
+     margin-top: 29px;
  }
  hr {
      width: 65%;
@@ -152,6 +152,9 @@ body{
   .login_btn{
     width:100%;
     margin-top:20px;
+  }
+  .next_btn{
+    
   }
 
   .last_line{
