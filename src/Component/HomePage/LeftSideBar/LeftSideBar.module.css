@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    border-right: 0.2rem solid grey;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+.header{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    padding: 1rem;
+    position: relative;
+    height: 100%;
+    width: 80%;
+}
+
+.iconsTwitter{
+    color: rgb(20, 172, 233);
+    font-size:2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    margin-right: 0.6rem;
+}
+
+.iconsTwitter:hover{
+    cursor: pointer;
+    background-color:rgb(205, 202, 199) ;
+}
+
+.container{
+    margin-right: 0.8rem;
+    position: fixed;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 50%;
+}
+
+.icons:hover{
+    cursor: pointer;
+    background-color:rgb(205, 202, 199) ;
+}
+
+.iconsTweet{
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 50%;
+    background-color:  rgb(20, 172, 233);
+    margin: 0;
+}
+
+.iconsTweet:hover{
+    cursor: pointer;
+}
+
+.iconsAccounts{
+    font-size: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-right: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(117, 116, 116);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1rem;
+    /* z-index: -1; */
+}
+
+.iconsAccounts:hover{
+    cursor: pointer;
+    background-color:rgb(205, 202, 199) ;    
+}

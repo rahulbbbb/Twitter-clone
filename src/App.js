@@ -11,7 +11,7 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route
+        <Route index
           path="/"
           element={
             <ProtectedRoutes>

@@ -1,0 +1,83 @@
+.main{
+    box-sizing: border-box;
+    box-shadow: 0.5rem 0.5rem 2rem grey;
+    border-radius: 1rem;
+    background-color: white;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+.main :hover{
+    cursor: pointer;
+}
+
+.itemContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.itemContainer span{
+    margin: 0;
+    padding: 0.5rem;
+    font-size: larger;
+    text-align: left;
+    color: black;
+    font-weight: bolder;
+}
+
+.itemContainer :nth-child(2){
+    width: 100%;
+}
+
+.listContainer{
+    display: flex;
+    width: 100%;
+}
+
+.listContainer span{
+    text-align: left;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.listContainer :first-child{
+    width: 100%;
+}
+
+.lists{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.lists span{
+    text-align: left;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: medium;
+    color: black;
+}
+
+.lists :nth-child(2){
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
