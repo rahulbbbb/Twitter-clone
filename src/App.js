@@ -9,14 +9,14 @@ import ProtectedRoutes from "./Component/ProtectedRoutes/ProtectedRoutes";
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route index
           path="/"
           element={
-            // <ProtectedRoutes>
+            <ProtectedRoutes>
               <Home />
-            // </ProtectedRoutes>
+            </ProtectedRoutes>
           }
         />
         <Route path="/signup" element={<SignUp />} />

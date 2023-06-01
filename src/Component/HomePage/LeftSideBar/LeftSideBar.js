@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './LeftSideBar.module.css';
 import { RiHome7Fill } from 'react-icons/ri';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
@@ -10,14 +10,18 @@ import { FaFeatherAlt, FaUserCircle, FaTwitter } from 'react-icons/fa';
 import { GoPlusSmall } from 'react-icons/go';
 import { useNavigate } from 'react-router-dom';
 import MoreDialogueBox from './MoreDialogueBox';
+import AccountDialogueBox from './AccountDialogueBox';
 
 
 function LeftSideBar() {
 
+    const [more, setMore] = useState(false);
+    const [accounts, setAccounts] = useState(false);
+
     const Navigate = useNavigate();
 
     const handleHome = ()=> {
-        Navigate('/home');
+        Navigate('/');
     }
 
     const handleExplore = ()=> {
@@ -41,11 +45,15 @@ function LeftSideBar() {
     }
 
     const handleMore = ()=> {
-        <MoreDialogueBox/>
+        setMore(!more);
+    }
+
+    const handleAccounts = ()=> {
+        setAccounts(!accounts);
     }
 
   return (
-    <div className={styles.main}>
+    <div  className={styles.main}>
         <header className={styles.header}>
             <div onClick={handleHome} className={styles.iconsTwitter}><FaTwitter/></div>
             <div className={styles.container}>
@@ -54,10 +62,16 @@ function LeftSideBar() {
             <div title='Notification' onClick={handleNotification} className={styles.icons}><GrNotification/></div>
             <div title='Messages' onClick={handleMessages} className={styles.icons}><LuMail/></div>
             <div title='Profile' onClick={handleProfile} className={styles.icons}><PersonOutlineIcon/></div>
+            {
+                more && <div> < MoreDialogueBox /> </div>
+            }
             <div title='More' onClick={handleMore} className={styles.icons}><CiCircleMore/></div>
             <div title='Tweet' onClick={handleTweet} className={styles.iconsTweet}><GoPlusSmall/><FaFeatherAlt/></div>
             </div>
-            <div title='Accounts' className={styles.iconsAccounts}><FaUserCircle/></div>
+            {
+                accounts && <div> <AccountDialogueBox/> </div>
+            }
+            <div title='Accounts' onClick={handleAccounts} className={styles.iconsAccounts}><FaUserCircle/></div>
 
         </header>
     </div>

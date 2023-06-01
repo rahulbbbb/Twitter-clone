@@ -15,6 +15,7 @@
     top: 0;
     bottom: 0;
     left: 0;
+    background-color: white;
 }
 .header{
     box-sizing: border-box;
@@ -102,6 +103,7 @@
     border-radius: 50%;
     position: fixed;
     bottom: 1rem;
+    /* z-index: -1; */
 }
 
 .iconsAccounts:hover{
