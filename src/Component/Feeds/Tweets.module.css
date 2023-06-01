@@ -1,0 +1,110 @@
+/* .Tcontainer{
+  margin-top: 20rem; 
+  height: auto;
+} */
+
+
+.tweetscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 37.5rem;
+    min-height: 80vh;
+    margin-top: 50px;
+    position: absolute;
+    top:20rem;
+    right:28.5rem;
+    z-index: -3;
+  }
+  
+  
+  .tweet {
+    padding: 40px;
+    background-color: white;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  }
+  
+  .tweetheader {
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .avatar2{
+    width: 80%;
+    height: auto;
+    margin-top:3rem;
+    margin-left:3rem;
+    border-radius: 8px;
+}
+  
+  .tweetinfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tweetuser {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .tweettime {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .tweetcontent {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+ 
+  .tweetbuttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+
+  .tweetbuttonC,
+   .tweetbuttonR,
+   .tweetbuttonH,
+   .tweetbuttonD,
+   .tweetbuttonE {
+
+  color:rgb(83, 100, 113);
+  font-size: 20px;
+  font-weight: 400;
+  }
+
+
+  .tweetbuttonC:hover {
+    color: blue;
+    cursor: pointer;
+
+  }
+  
+  .tweetbuttonR:hover {
+    color: green;
+    cursor: pointer;
+  }
+  
+  .tweetbuttonH:hover {
+    color: red;
+   cursor: pointer;
+  }
+  .tweetbuttonD:hover {
+    color: purple;
+    cursor: pointer;
+  }
+  
+  .tweetbuttonE:hover {
+    color: orange;
+    cursor: pointer;
+  }
+  
+  

@@ -14,6 +14,8 @@ const CenterHeader = () => {
   const [inputFocused, setInputFocused] = useState(false);
   const fileInputRef = useRef(null);
   const [showScheduleBox, setShowScheduleBox] = useState(false);
+ /*  const [tweetContent, setTweetContent] = useState('');
+  const [submittedTweets, setSubmittedTweets] = useState([]); */
 
   const handleScheduleClick = () => {
     setShowScheduleBox(!showScheduleBox);
@@ -31,6 +33,14 @@ const CenterHeader = () => {
     setInputFocused(false);
   };
 
+ /*  const handleTweet = () => {
+    setShowScheduleBox(false);
+    if (tweetContent.trim() !== '') {
+      setSubmittedTweets([...submittedTweets, tweetContent]);
+      setTweetContent('');
+    }
+  };
+ */
   return (
     <>
       <div className={styles.allitem}>
@@ -54,6 +64,7 @@ const CenterHeader = () => {
 
         <div className={styles.header2}>
           <div className={styles.container2}>
+
             <div className={styles.inputContainer}>
               <img src="./profilePic.png" alt="profile" />
               <input
@@ -62,6 +73,7 @@ const CenterHeader = () => {
                 className={`${styles.inputBar} ${inputFocused ? styles.inputFocused : ''}`}
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
+                /* onChange={(e) => setTweetContent(e.target.value)} */
               />
             </div>
             <div className={styles.container22}>
@@ -132,12 +144,23 @@ const CenterHeader = () => {
                 </div>
               </div>
               <div className={`${styles.button1} ${inputFocused ? '' : styles.buttonFade}`}>
-                <button>Tweet</button>
+                <button /* onClick={handleTweet} */>Tweet</button>
               </div>
             </div>
+            
           </div>
+          
         </div>
       </div>
+
+      {/* <div className={styles.submittedTweetsContainer}>
+            {submittedTweets.map((tweet, index) => (
+            <div key={index} className={styles.submittedTweet}>
+              {tweet}
+            </div>
+              ))}
+             </div> */}
+      
     </>
   );
 };
