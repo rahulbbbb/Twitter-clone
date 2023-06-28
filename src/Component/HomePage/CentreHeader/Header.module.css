@@ -1,260 +1,286 @@
 .allitem{
-    position:absolute;
-    left:27.5vw;
-    top:0%;
-    width: 37.5rem;
-    height:auto;
-    overflow: hidden;
-   z-index: 1;
-   border:0.5px solid whitesmoke;
-   
+  position:absolute;
+  left:27.5vw;
+  top:0%;
+  width: 37.5rem;
+  height:auto;
+  overflow: hidden;
+ z-index: -1;
+ border:0.5px solid whitesmoke;
+ 
 }
 
+.activeLink {
+  font-weight: 800;
+  font-size: x-large;
+  text-decoration: none;
+  position: relative;
+}
+
+.activeLink::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: blue;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+}
+
+
 .header {
-    background-color: #ffffff;
-    width: 37.5rem; 
-    box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    padding: 0.625rem 0;
-    border-bottom: 0.025rem solid whitesmoke; 
-    z-index: 1;
-    position: fixed;
-    top:0%;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  h2 {
-    margin-left: 1.25rem; 
-    margin-bottom: 2.5rem; 
-  }
-  
-  .bottom{
-    display: flex;
-  }
+  background-color: #ffffff;
+  width: 37.5rem; 
+  box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  padding: 0.625rem 0;
+  border-bottom: 0.025rem solid whitesmoke; 
+  z-index: 1;
+  position: fixed;
+  top:0%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  margin-left: 1.25rem; 
+  margin-bottom: 2.5rem; 
+}
+
+.bottom{
+  display: flex;
+}
 
 .bottomleft{
-  width: 50%;
+width: 50%;
 }
 
 .bottomright{
-  width: 50%;
+width: 50%;
 }
 
-  .btn1 {
-    margin-left: 7.5rem; 
-    margin-bottom: -1.25rem; 
-    transition: background-color 0.3s;
-    color: black;
-    font-weight: bold;
- }
- 
-  
-  .btn2 {
-    margin-left:5rem; 
-    margin-top: -0.3125rem;
-    transition: background-color 0.3s;
-    color: black;
-    font-weight: bold;
-
+.btn1 {
+  margin-left: 7.5rem; 
+  margin-bottom: -1.25rem; 
+  transition: background-color 0.3s;
+  color: black;
+  font-weight: bold;
 }
 
 
-  
-  
-  .header2 {
-    background-color: #ffffff;
-    width: 37.5rem; 
-    margin-top:100px;
-    box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    padding: 0.625rem 0;
- }
-  
-  .container2 {
-    flex-direction: column;
-    border-top: 0.0625rem solid #fff;
-    margin-top: 0.625rem; 
-  }
-  
-  .container2 {
-    display: flex;
-    align-items: center;
-  }
-  
-  .inputContainer {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .inputContainer img {
-    width: 6.25rem; 
-    height: 5rem; 
-    margin-right: 0.625rem; 
-  }
-  
-  .inputBar {
-    width: 100%;
-    height: 40px;
-    transition: height 0.5s;
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 20px;
-    outline: none;
-  }
+.btn2 {
+  margin-left:5rem; 
+  margin-top: -0.3125rem;
+  transition: background-color 0.3s;
+  color: black;
+  font-weight: bold;
 
-  .inputBar::placeholder {
-    font-size: 25px; 
-    color: gray; 
-  }
+}
 
-  .inputFocused {
-    width:100%;
-    height: 150px;
-  }
-  
-  
-  .container22 {
-    display: flex;
-    justify-content: space-around;
-    border-top: 0.025rem solid whitesmoke;
-  }
-  
-  .icons {
-    width: 18.75rem; 
-  }
-  
-  .subicons {
-    margin-left: 3.75rem; 
-    margin-top: 1.875rem; 
-  }
-  
-  .subicons1 {
-    margin-left: 0.625rem; 
-    color: rgb(29, 155, 240);
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .subicons1:hover {
-    transform: translateY(-0.3125rem) scale(1.1); 
-  }
-  
-  .button1 {
-    width: 18.75rem; 
-  }
-  
-  .container22 button {
-    margin-left: 9.375rem; 
-    margin-bottom: 1.25rem; 
-    background-color: rgb(29, 155, 240);
-    color: white;
-    border: none;
-    font-weight: bolder;
-    font-size: 1rem; 
-  }
-  
-  .buttonFade {
-    opacity: 0.5;
-  }
-  .scheduleBox {
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  width:35rem;
-  height: 30rem;
-  transform: translate(-50%, -50%);
-  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  z-index: 9999;
-  }
 
-  .head{
-    display: flex;
-    
-  }
-  
-  .scheduleContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .dateContainer,
-  .timeContainer,
-  .timezoneContainer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .dateInputContainer,
-  .timeInputContainer {
-    display: flex;
-    gap: 0.25rem;
-    align-items: center;
-  }
-  
-  .dateInputContainer input,
-  .timeInputContainer input, select{
-    width: 8.5rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 14px;
-    margin-left: 20px;
-  }
-  
-  
-  .dateInputContainer input::placeholder,
-  .timeInputContainer input::placeholder {
-    color: #888;
-    font-size: 14px;
-  }
-  
-  .timezoneContainer select {
-    width: 5rem;
-    margin-top: 30px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    font-size: 14px;
-  }
 
-  .closeButton {
-    color: gray;
-    transition: color 0.3s;
-  }
+.header2 {
+  background-color: #ffffff;
+ border:2px solid whitesmoke;
+  border-top: none;
+  width: 37.5rem; 
+  margin-top:100px;
+  /* box-shadow: 0px 0.125rem 0.25rem rgba(0, 0, 0, 0.1); */
+  padding: 0.625rem 0;
+  z-index: 0;
   
-  .closeButton:hover {
-    color: black;
-    cursor: pointer;
-  }
+}
+
+
+.container2 {
+  flex-direction: column;
+  border-top: 0.0625rem solid #fff;
+  margin-top: 0.625rem; 
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputContainer img {
+  width: 6.25rem; 
+  height: 5rem; 
+  margin-right: 0.625rem; 
+}
+
+.inputBar {
+  width: 100%;
+  height: 40px;
+  transition: height 0.5s;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.inputBar::placeholder {
+  font-size: 25px; 
+  color: gray; 
+}
+
+.inputFocused {
+  width:100%;
+  height: 150px;
+}
+
+
+.container22 {
+  display: flex;
+  justify-content: space-around;
+  border-top: 0.025rem solid whitesmoke;
+}
+
+.icons {
+  width: 18.75rem; 
+}
+
+.subicons {
+  margin-left: 3.75rem; 
+  margin-top: 1.875rem; 
+}
+
+.subicons1 {
+  margin-left: 0.625rem; 
+  color: rgb(29, 155, 240);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.subicons1:hover {
+  transform: translateY(-0.3125rem) scale(1.1); 
+}
+
+.button1 {
+  width: 18.75rem; 
+}
+
+.container22 button {
+  margin-left: 9.375rem; 
+  margin-bottom: 1.25rem; 
+  background-color: rgb(29, 155, 240);
+  color: white;
+  border: none;
+  font-weight: bolder;
+  font-size: 1rem; 
+}
+
+.buttonFade {
+  opacity: 0.5;
+}
+.scheduleBox {
+  position: fixed;
+top: 50%;
+left: 50%;
+width:35rem;
+height: 30rem;
+transform: translate(-50%, -50%);
+box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+background-color: #f5f5f5;
+padding: 1rem;
+border-radius: 0.5rem;
+z-index: 9999;
+}
+
+.head{
+  display: flex;
   
-  
-  @media (max-width: 768px) {
-    .allitem {
-      right: auto;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+}
+
+.scheduleContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.dateContainer,
+.timeContainer,
+.timezoneContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dateInputContainer,
+.timeInputContainer {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.dateInputContainer input,
+.timeInputContainer input, select{
+  width: 8.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+
+.dateInputContainer input::placeholder,
+.timeInputContainer input::placeholder {
+  color: #888;
+  font-size: 14px;
+}
+
+.timezoneContainer select {
+  width: 5rem;
+  margin-top: 30px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 14px;
+}
+
+.closeButton {
+  color: gray;
+  transition: color 0.3s;
+}
+
+.closeButton:hover {
+  color: black;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .allitem {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
+}
 
 /*   .submittedTweet {
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width: 37.5rem; 
-    height: 100px;
-    border: 2px solid  red 
-  }
-   */
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 37.5rem; 
+  height: 100px;
+  border: 2px solid  red 
+}
+ */
+
+
+

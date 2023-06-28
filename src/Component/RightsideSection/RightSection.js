@@ -43,7 +43,7 @@ export default function RightsideSection () {
       },
     
     {
-      title: "Trending in Plitics",
+      title: "Trending in Politics",
       name: "#Modi",
       tweets: "10.2k Tweets",
       Names: "Ross",

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { TweetsData } from './feedsApi'; 
+//import { TweetsData } from './feedsApi'; 
 import { FaRetweet } from 'react-icons/fa';
 import {AiOutlineHeart} from 'react-icons/ai'
 import {FaRegComment} from 'react-icons/fa'
@@ -28,16 +28,35 @@ const Tweet = ({ tweet }) => {
 
   return (
     <div className={styles.tweet}>
+ {
+  tweet &&tweet.tweetedBy && tweet.tweetedBy.name === "Rahul Bankoti" ? (
+    <>
       <div className={styles.tweetheader}>
         <img src={tweet.image} alt="User Avatar" className={styles.avatar1} />
         <div className={styles.tweetinfo}>
           <h3 className={styles.tweetuser}>{tweet.tweetedBy.name}</h3>
           <p className={styles.tweettime}>{tweet.createdAt}</p>
-       </div>
+        </div>
+      </div>
+     
+      <p className={styles.tweetcontent}>{tweet.content}</p>
+    </>
+  ) : (
+    <>
+      <div className={styles.tweetheader}>
+        <img src={tweet.image} alt="User Avatar" className={styles.avatar1} />
+        <div className={styles.tweetinfo}>
+          <h3 className={styles.tweetuser}>{tweet.tweetedBy.name}</h3>
+          <p className={styles.tweettime}>{tweet.createdAt}</p>
+        </div>
       </div>
       <img src={tweet.image} alt="User Avatar" className={styles.avatar2} />
 
       <p className={styles.tweetcontent}>{tweet.content}</p>
+    </>
+  )
+}
+
       <div className={styles.tweetbuttons}>
 
         <div className={styles.tweetbuttonC} title="Reply"><FaRegComment /> {comments}</div>
@@ -52,11 +71,12 @@ const Tweet = ({ tweet }) => {
   );
 };
 
-const Tweets = () => {
+const Tweets = ({tweets}) => {
   return (
     <div  className={styles.Tcontainer}>
     <div className={styles.tweetscontainer}>
-      {TweetsData.map((tweet) => (
+      {tweets && 
+      tweets.map((tweet) => (
         <Tweet key={tweet.id} tweet={tweet} />
       ))}
     </div>

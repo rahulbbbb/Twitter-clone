@@ -10,8 +10,9 @@
     justify-content: center;
     gap: 0.3rem;
     position: absolute;
-    top: 0;
-    z-index: 10;
+    top: 74px;
+    left: 50px;
+    z-index: 1000;
     overflow-y: auto;
 }
 

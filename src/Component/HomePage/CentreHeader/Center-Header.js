@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import styles from './Header.module.css';
+import React, { useState, useRef } from "react";
+import styles from "./Header.module.css";
 import {
   FaImage,
   FaSmile,
@@ -7,15 +7,20 @@ import {
   FaCalendarAlt,
   FaMapMarkerAlt,
   FaTimes,
-} from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const CenterHeader = () => {
+const CenterHeader = ({ addTweet }) => {
   const [inputFocused, setInputFocused] = useState(false);
   const fileInputRef = useRef(null);
   const [showScheduleBox, setShowScheduleBox] = useState(false);
- /*  const [tweetContent, setTweetContent] = useState('');
-  const [submittedTweets, setSubmittedTweets] = useState([]); */
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+   const [tweetContent, setTweetContent] = useState('');
+ /* const [submittedTweets, setSubmittedTweets] = useState([]); */
 
   const handleScheduleClick = () => {
     setShowScheduleBox(!showScheduleBox);
@@ -30,10 +35,38 @@ const CenterHeader = () => {
   };
 
   const handleInputBlur = () => {
-    setInputFocused(false);
+     setInputFocused(false);
   };
 
- /*  const handleTweet = () => {
+  const handleOnChange=(e)=>{
+    setTweetContent(e.target.value);
+  }
+
+  const handleTweet = () => {
+  
+    if (tweetContent.trim() !== '') {
+      addTweet({
+        id: "6e7314d7-f08f-1347-ac9a-6e7b05990189",
+        content: tweetContent,
+        createdAt: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        image: "./lf20_vatpKHGdo4.png",
+        tweetedBy: {
+          id: "eead1d48-2310-44d7-8bf8-ff076d6ee35e",
+          name: "Rahul Bankoti",
+        },
+        likeCount: 0,
+        commentCount: 0,
+        reTweetsCount: 0,
+        isLiked: false,
+      });
+    }
+    setTweetContent('');
+
+  };
+ 
+  
+
+  /*  const {handleTweet} = () => {
     setShowScheduleBox(false);
     if (tweetContent.trim() !== '') {
       setSubmittedTweets([...submittedTweets, tweetContent]);
@@ -44,17 +77,30 @@ const CenterHeader = () => {
   return (
     <>
       <div className={styles.allitem}>
+        
         <div className={styles.header}>
           <div className={styles.container}>
             <h2>Home</h2>
             <div className={styles.bottom}>
               <div className={styles.bottomleft}>
-                <Link to="/" className={styles.btn1} style={{ textDecoration: 'none' }}>
+                <Link
+                  className={`${styles.btn1} ${
+                    !isActive ? styles.activeLink : ""
+                  }`}
+                  style={{ textDecoration: "none" }}
+                  onClick={handleClick}
+                >
                   For you
                 </Link>
               </div>
               <div className={styles.bottomright}>
-                <Link to="/" className={styles.btn2} style={{ textDecoration: 'none' }}>
+                <Link
+                  className={`${styles.btn2} ${
+                    isActive ? styles.activeLink : ""
+                  }`}
+                  style={{ textDecoration: "none" }}
+                  onClick={handleClick}
+                >
                   Following
                 </Link>
               </div>
@@ -64,45 +110,58 @@ const CenterHeader = () => {
 
         <div className={styles.header2}>
           <div className={styles.container2}>
-
             <div className={styles.inputContainer}>
-              <img src="./profilePic.png" alt="profile" />
+              <img src="./lf20_vatpKHGdo4.png" alt="profile" />
               <input
                 type="text"
                 placeholder="What is happening?!"
-                className={`${styles.inputBar} ${inputFocused ? styles.inputFocused : ''}`}
+                className={`${styles.inputBar} ${
+                  inputFocused ? styles.inputFocused : ""
+                }`}
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
+                onChange={handleOnChange}
+                value={tweetContent}
                 /* onChange={(e) => setTweetContent(e.target.value)} */
               />
             </div>
             <div className={styles.container22}>
               <div className={styles.icons}>
                 <div className={styles.subicons}>
-                  <FaImage onClick={handleIconClick} className={styles.subicons1} />
-                  <input type="file" style={{ display: 'none' }} ref={fileInputRef} />
+                  <FaImage
+                    onClick={handleIconClick}
+                    className={styles.subicons1}
+                  />
+                  <input
+                    type="file"
+                    style={{ display: "none" }}
+                    ref={fileInputRef}
+                  />
                   <FaSmile className={styles.subicons1} />
                   <FaPoll className={styles.subicons1} />
                   <FaMapMarkerAlt className={styles.subicons1} />
-                  <FaCalendarAlt onClick={handleScheduleClick} className={styles.subicons1} />
+                  <FaCalendarAlt
+                    onClick={handleScheduleClick}
+                    className={styles.subicons1}
+                  />
                   {showScheduleBox && (
                     <div className={styles.scheduleBox}>
-                      <div className={styles.head} style={{ fontSize: '20px' }}>
+                      <div className={styles.head} style={{ fontSize: "20px" }}>
                         <FaTimes
                           className={styles.closeButton}
                           onClick={handleScheduleClick}
-                          style={{ color: 'gray', transition: 'color 0.3s' }}
-                          onMouseOver={(e) => (e.target.style.color = 'black')}
-                          onMouseOut={(e) => (e.target.style.color = 'gray')}
+                          style={{ color: "gray", transition: "color 0.3s" }}
+                          onMouseOver={(e) => (e.target.style.color = "black")}
+                          onMouseOut={(e) => (e.target.style.color = "gray")}
                         />
-                        <h3 style={{ marginLeft: '50px' }}>Schedule</h3>
+                        <h3 style={{ marginLeft: "50px" }}>Schedule</h3>
                         <button
                           className={styles.submitButton}
                           style={{
-                            color: 'white',
-                            backgroundColor: 'black',
-                            height: '30px',
-                            marginLeft: '250px',
+                            color: "white",
+                            backgroundColor: "black",
+                            height: "30px",
+                            marginLeft: "250px",
                           }}
                         >
                           Confirm
@@ -115,7 +174,11 @@ const CenterHeader = () => {
                           <div className={styles.dateInputContainer}>
                             <input type="text" placeholder="MM" maxLength="2" />
                             <input type="text" placeholder="DD" maxLength="2" />
-                            <input type="text" placeholder="YYYY" maxLength="4" />
+                            <input
+                              type="text"
+                              placeholder="YYYY"
+                              maxLength="4"
+                            />
                           </div>
                         </div>
 
@@ -133,9 +196,15 @@ const CenterHeader = () => {
 
                         <label>Timezone:</label>
                         <select>
-                          <option value="timezone1">(IST) India Standard Time</option>
-                          <option value="timezone2">(PST) Pacific Standard Time</option>
-                          <option value="timezone2">(CET) Central European Time</option>
+                          <option value="timezone1">
+                            (IST) India Standard Time
+                          </option>
+                          <option value="timezone2">
+                            (PST) Pacific Standard Time
+                          </option>
+                          <option value="timezone2">
+                            (CET) Central European Time
+                          </option>
                           <option value="timezone2">UTC +2</option>
                         </select>
                       </div>
@@ -143,14 +212,17 @@ const CenterHeader = () => {
                   )}
                 </div>
               </div>
-              <div className={`${styles.button1} ${inputFocused ? '' : styles.buttonFade}`}>
-                <button /* onClick={handleTweet} */>Tweet</button>
+              <div className={`${styles.button1} ${inputFocused || tweetContent.trim() !== '' ? '' : styles.buttonFade}`}>
+                <button
+                  onClick={ handleTweet}
+                >
+                  Tweet
+                </button>
               </div>
             </div>
-            
           </div>
-          
         </div>
+        
       </div>
 
       {/* <div className={styles.submittedTweetsContainer}>
@@ -160,14 +232,8 @@ const CenterHeader = () => {
             </div>
               ))}
              </div> */}
-      
     </>
   );
 };
 
 export default CenterHeader;
-
-
-
-
-
